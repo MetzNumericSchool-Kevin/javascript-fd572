@@ -75,22 +75,8 @@ function calculerPrixTotal(id_potion,inventaire,quantite){
 // ✍️ TON CODE ICI
 // Crée ta fonction fabriquerPotion() ci-dessous
 
-// 1. Crée une fonction nommée `fabriquerPotion` avec **3 paramètres** :
-//    - `id` : l'identifiant de la potion
-//    - `prix` : le prix de la potion (valeur par défaut = 10)
-//    - `stock` : le stock initial (valeur par défaut = 1)
-// 2. La fonction doit retourner un **nouvel objet** avec la structure suivante :
-//    ```js
-//    {
-//      id: "...",
-//      prix: ...,
-//      stock: ...
-//    }
-//    ```
-// 3. Teste ta fonction en créant plusieurs potions avec des prix et stocks différents
-// 4. Affiche chaque potion créée dans la console
 
-function fabriquerPotion(id,prix,stock){
+function fabriquerPotion(id,prix=10,stock=1){
 
 return  {
     id: id,
