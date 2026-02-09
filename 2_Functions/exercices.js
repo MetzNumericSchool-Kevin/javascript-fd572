@@ -37,8 +37,8 @@ function salutations(nom_sorcier){
 
 
 // 🧪 TESTS - Décommente pour tester
-console.log("=== EXERCICE 1 ===");
-salutations(nom_sorcier);
+// console.log("=== EXERCICE 1 ===");
+// salutations(nom_sorcier);
 
 
 // ============================================
@@ -49,16 +49,6 @@ salutations(nom_sorcier);
 
 // ✍️ TON CODE ICI
 // Crée ta fonction calculerPrixTotal() ci-dessous
-
-// 1. Crée une fonction nommée `calculerPrixTotal` avec **3 paramètres** :
-//    - `id_potion` : l'identifiant de la potion (ex: "potion_soin")
-//    - `inventaire` : le tableau d'inventaire
-//    - `quantite` : la quantité demandée (valeur par défaut = 1)
-// 2. La fonction doit :
-//    - Trouver la potion dans l'inventaire grâce à son `id`
-//    - Calculer le prix total : `prix de la potion × quantité`
-//    - Retourner ce prix total
-// 3. Teste ta fonction en affichant le prix pour 3 potions de soin
 
 function calculerPrixTotal(id_potion,inventaire,quantite){
   let indice = -1
@@ -71,9 +61,9 @@ function calculerPrixTotal(id_potion,inventaire,quantite){
 }
 
 // 🧪 TESTS - Décommente pour tester
-console.log("=== EXERCICE 2 ===");
-const prix = calculerPrixTotal("potion_soin", inventaire, 3);
-console.log("Prix pour 3 potions:", prix, "🪙");
+// console.log("=== EXERCICE 2 ===");
+// const prix = calculerPrixTotal("potion_soin", inventaire, 3);
+// console.log("Prix pour 3 potions:", prix, "🪙");
 
 
 // ============================================
@@ -85,15 +75,36 @@ console.log("Prix pour 3 potions:", prix, "🪙");
 // ✍️ TON CODE ICI
 // Crée ta fonction fabriquerPotion() ci-dessous
 
+// 1. Crée une fonction nommée `fabriquerPotion` avec **3 paramètres** :
+//    - `id` : l'identifiant de la potion
+//    - `prix` : le prix de la potion (valeur par défaut = 10)
+//    - `stock` : le stock initial (valeur par défaut = 1)
+// 2. La fonction doit retourner un **nouvel objet** avec la structure suivante :
+//    ```js
+//    {
+//      id: "...",
+//      prix: ...,
+//      stock: ...
+//    }
+//    ```
+// 3. Teste ta fonction en créant plusieurs potions avec des prix et stocks différents
+// 4. Affiche chaque potion créée dans la console
 
+function fabriquerPotion(id,prix,stock){
 
+return  {
+    id: id,
+    prix: prix,
+    stock: stock,
+  }
+}
 
 // 🧪 TESTS - Décommente pour tester
-// console.log("=== EXERCICE 3 ===");
-// const potion1 = fabriquerPotion("potion_mana", 15, 5);
-// console.log(potion1);
-// const potion2 = fabriquerPotion("potion_force");
-// console.log(potion2);
+console.log("=== EXERCICE 3 ===");
+const potion1 = fabriquerPotion("potion_mana", 15, 5);
+console.log(potion1);
+const potion2 = fabriquerPotion("potion_force");
+console.log(potion2);
 
 
 // ============================================
