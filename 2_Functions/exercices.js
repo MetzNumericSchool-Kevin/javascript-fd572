@@ -118,10 +118,10 @@ function ajouterPotion(inventaire,potion){
 
 
 // 🧪 TESTS - Décommente pour tester
-console.log("=== EXERCICE 4 ===");
-const nouvellePotion = fabriquerPotion("potion_mana", 20, 3);
-ajouterPotion(inventaire, nouvellePotion);
-console.log("Inventaire après ajout:", inventaire);
+// console.log("=== EXERCICE 4 ===");
+// const nouvellePotion = fabriquerPotion("potion_mana", 20, 3);
+// ajouterPotion(inventaire, nouvellePotion);
+// console.log("Inventaire après ajout:", inventaire);
 
 
 // ============================================
@@ -132,15 +132,45 @@ console.log("Inventaire après ajout:", inventaire);
 
 // ✍️ TON CODE ICI
 // Crée tes fonctions getPotionsEnStock() et getPotionsEnRupture() ci-dessous
+// 1. Crée une fonction `getPotionsEnStock` qui :
+//    - Prend l'inventaire en paramètre
+//    - Retourne un **nouveau tableau** contenant uniquement les potions avec `stock > 0`
+//    - Utilise la méthode `filter()` pour ne pas modifier l'inventaire original
 
+// 2. Crée une fonction `getPotionsEnRupture` qui :
+//    - Prend l'inventaire en paramètre
+//    - Retourne un **nouveau tableau** contenant uniquement les potions avec `stock === 0`
+//    - Utilise aussi la méthode `filter()`
+
+// 3. Teste tes fonctions :
+//    - Affiche l'inventaire complet
+//    - Affiche les potions en stock
+//    - Affiche les potions en rupture
+//    - Vérifie que l'inventaire original n'a pas changé
+
+// 💡 **Rappel sur filter()** :
+
+// ```js
+// const tableau = [1, 2, 3, 4, 5];
+// const pairs = tableau.filter((nombre) => nombre % 2 === 0); // [2, 4]
+// ```
+
+function getPotionsEnStock(inventaire){
+  const inventaire2 = inventaire.filter((nombre) => nombre.stock > 0)
+  return inventaire2
+}
+function getPotionsEnRupture(inventaire){
+  const inventaire2 = inventaire.filter((nombre) => nombre.stock === 0)
+  return inventaire2
+}
 
 
 
 // 🧪 TESTS - Décommente pour tester
-// console.log("=== EXERCICE 5 ===");
-// console.log("Inventaire complet:", inventaire);
-// console.log("Potions en stock:", getPotionsEnStock(inventaire));
-// console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
+console.log("=== EXERCICE 5 ===");
+console.log("Inventaire complet:", inventaire);
+console.log("Potions en stock:", getPotionsEnStock(inventaire));
+console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
 
 
 // ============================================
