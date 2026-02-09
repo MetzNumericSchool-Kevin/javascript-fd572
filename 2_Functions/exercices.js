@@ -37,9 +37,9 @@ function salutations(nom_sorcier){
 
 
 // 🧪 TESTS - Décommente pour tester
-// console.log("=== EXERCICE 1 ===");
-// salutations(nom_sorcier);
-salutations(nom_sorcier)
+console.log("=== EXERCICE 1 ===");
+salutations(nom_sorcier);
+
 
 // ============================================
 // EXERCICE 2 : Quel est le tarif d'une potion ?
@@ -50,13 +50,30 @@ salutations(nom_sorcier)
 // ✍️ TON CODE ICI
 // Crée ta fonction calculerPrixTotal() ci-dessous
 
+// 1. Crée une fonction nommée `calculerPrixTotal` avec **3 paramètres** :
+//    - `id_potion` : l'identifiant de la potion (ex: "potion_soin")
+//    - `inventaire` : le tableau d'inventaire
+//    - `quantite` : la quantité demandée (valeur par défaut = 1)
+// 2. La fonction doit :
+//    - Trouver la potion dans l'inventaire grâce à son `id`
+//    - Calculer le prix total : `prix de la potion × quantité`
+//    - Retourner ce prix total
+// 3. Teste ta fonction en affichant le prix pour 3 potions de soin
 
-
+function calculerPrixTotal(id_potion,inventaire,quantite){
+  let indice = -1
+  for(let i = 0; i < inventaire.length ; i++){
+    if (inventaire[i].id === id_potion){
+      indice = i
+    }
+  }
+  return inventaire[id_potion].prix*quantite
+}
 
 // 🧪 TESTS - Décommente pour tester
-// console.log("=== EXERCICE 2 ===");
-// const prix = calculerPrixTotal("potion_soin", inventaire, 3);
-// console.log("Prix pour 3 potions:", prix, "🪙");
+console.log("=== EXERCICE 2 ===");
+const prix = calculerPrixTotal("potion_soin", inventaire, 3);
+console.log("Prix pour 3 potions:", prix, "🪙");
 
 
 // ============================================
