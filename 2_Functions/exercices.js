@@ -67,7 +67,7 @@ function calculerPrixTotal(id_potion,inventaire,quantite){
       indice = i
     }
   }
-  return inventaire[id_potion].prix*quantite
+  return inventaire[indice].prix*quantite
 }
 
 // 🧪 TESTS - Décommente pour tester
