@@ -49,6 +49,15 @@ span_pacotille.remove()
 // ✍️ TON CODE ICI
 // Ajoute un événement 'click' sur le bouton #call_archibald
 
+boutton1 = document.querySelector("#call_archibald");
+boutton1.addEventListener("click",callback => {
+  alert(`🧙‍♂️ J'arrive, j'arrive Aventurier !`);
+});
+
+// 1. Sélectionne le bouton `<button id="call_archibald">` avec `querySelector()`
+// 2. Ajoute un écouteur d'événement avec `addEventListener('click', callback)`
+// 3. Dans la fonction callback, utilise `alert()` pour afficher : `🧙‍♂️ J'arrive, j'arrive Aventurier !`
+
 // ============================================
 // EXERCICE 5 : Faisons un peu de magie 🪄
 // ============================================
