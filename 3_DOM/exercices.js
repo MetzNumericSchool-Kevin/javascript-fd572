@@ -7,6 +7,10 @@
 // ✍️ TON CODE ICI
 // Sélectionne le <h1> et affiche son texte dans la console
 
+titre = document.querySelector("h1")
+console.log(titre)
+
+
 // ============================================
 // EXERCICE 2 : Des informations manquent !
 // ============================================
@@ -16,6 +20,11 @@
 // ✍️ TON CODE ICI
 // Crée un nouveau paragraphe et ajoute-le dans #description_boutique
 
+conteneur = document.querySelector("#description_boutique");
+para = document.createElement('p');
+para.textContent = "Pour cela, il vous suffit de cliquer sur une des potions de la liste ci-dessous pour l'acheter.";
+conteneur.appendChild(para);
+
 // ============================================
 // EXERCICE 3 : Roger, enfoiré !
 // ============================================
@@ -24,6 +33,12 @@
 
 // ✍️ TON CODE ICI
 // Supprime le <span id="blague_de_roger_le_sorcier">
+
+span_pacotille = document.querySelector("#blague_de_roger_le_sorcier");
+span_pacotille.remove()
+
+// 1. Sélectionne l'élément `<span id="blague_de_roger_le_sorcier">` avec `querySelector()`
+// 2. Supprime-le du DOM avec la méthode `.remove()`
 
 // ============================================
 // EXERCICE 4 : Archibald n'est pas là, appelons-le !

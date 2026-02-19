@@ -167,10 +167,10 @@ function getPotionsEnRupture(inventaire){
 
 
 // 🧪 TESTS - Décommente pour tester
-console.log("=== EXERCICE 5 ===");
-console.log("Inventaire complet:", inventaire);
-console.log("Potions en stock:", getPotionsEnStock(inventaire));
-console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
+// console.log("=== EXERCICE 5 ===");
+// console.log("Inventaire complet:", inventaire);
+// console.log("Potions en stock:", getPotionsEnStock(inventaire));
+// console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
 
 
 // ============================================
@@ -183,12 +183,75 @@ console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
 // ✍️ TON CODE ICI
 // Crée ta fonction fabriquerPotionAvecIngredients() ci-dessous
 
+// const manuel_de_fabrication = {
+//   potion_soin: {
+//     ingredients: ["eau_de_source", "ecaille_de_dragon", "poudre_de_diamant"],
+//     temps_de_fabrication: 3, // exprimé en secondes
+//   },
+// };
+
+function fabriquerPotionAvecIngredients(id,ingredients,prix=10,stock=1){
+  if(!(id in manuel_de_fabrication)){
+    console.log("potion non trouvé dans le manuel de fabrication")
+    return
+  }
+
+  if(!(ingredients in manuel_de_fabrication[id]["ingredients"])){
+    console.log("tous les ingredients sont presents");
+  }
+  
+  // console.log(manuel_de_fabrication[id]["ingredients"])
+  
+   
+}
+
+// 1. **Crée une nouvelle version** de ta fonction de fabrication : `fabriquerPotionAvecIngredients`
+// 2. Cette fonction prend **4 paramètres** :
+//    - `id` : l'identifiant de la potion
+//    - `ingredients` : un tableau d'ingrédients (ex: `["eau_de_source", "ecaille_de_dragon"]`)
+//    - `prix` : le prix (par défaut = 10)
+//    - `stock` : le stock (par défaut = 1)
+// 3. La fonction doit :
+//    - Vérifier dans `manuel_de_fabrication` si la potion existe
+//    - Vérifier que **tous les ingrédients requis** sont présents dans le tableau `ingredients`
+//    - **Si les ingrédients sont complets** : retourner la nouvelle potion
+//    - **Si des ingrédients manquent** : retourner `new Error('Il manque des ingrédients à cette potion')`
+
+// 4. **Tests** :
+//    - Teste avec tous les bons ingrédients → doit créer la potion
+//    - Teste avec des ingrédients manquants → doit retourner une erreur
+//    - Utilise cette structure pour gérer les erreurs :
+//    ```js
+//    const resultat = fabriquerPotionAvecIngredients(
+//      "potion_soin",
+//      ["eau_de_source"],
+//      10,
+//      1,
+//    );
+//    if (resultat instanceof Error) {
+//      console.error(resultat.message);
+//    } else {
+//      ajouterPotion(inventaire, resultat);
+//    }
+//    ```
+
+// ⚠️ **Note** : Ici, on utilise `manuel_de_fabrication` de manière globale (ce n'est pas idéal, mais c'est pour simplifier l'exercice).
+
+// 💡 **Astuce pour vérifier les ingrédients** : Utilise une boucle pour vérifier que chaque ingrédient requis est présent dans le tableau fourni.
 
 
 
 // 🧪 TESTS - Décommente pour tester
-// console.log("=== EXERCICE 6 ===");
-// // Test avec tous les ingrédients
+console.log("=== EXERCICE 6 ===");
+
+fabriquerPotionAvecIngredients(
+  "potion_soin",
+  ["eau_de_source", "ecaille_de_dragon", "poudre_de_diamant"],
+  10,
+  1
+);
+
+// Test avec tous les ingrédients
 // const resultat1 = fabriquerPotionAvecIngredients(
 //   "potion_soin",
 //   ["eau_de_source", "ecaille_de_dragon", "poudre_de_diamant"],
@@ -201,8 +264,8 @@ console.log("Potions en rupture:", getPotionsEnRupture(inventaire));
 //   console.log("✅ Potion créée:", resultat1);
 //   ajouterPotion(inventaire, resultat1);
 // }
-//
-// // Test avec ingrédients manquants
+
+// Test avec ingrédients manquants
 // const resultat2 = fabriquerPotionAvecIngredients(
 //   "potion_soin",
 //   ["eau_de_source"],
