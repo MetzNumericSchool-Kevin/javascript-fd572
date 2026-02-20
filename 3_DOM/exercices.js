@@ -8,7 +8,7 @@
 // Sélectionne le <h1> et affiche son texte dans la console
 
 titre = document.querySelector("h1")
-console.log(titre)
+console.log(titre.textContent)
 
 
 // ============================================
@@ -50,13 +50,10 @@ span_pacotille.remove()
 // Ajoute un événement 'click' sur le bouton #call_archibald
 
 boutton1 = document.querySelector("#call_archibald");
-boutton1.addEventListener("click",callback => {
+boutton1.addEventListener("click",() => {
   alert(`🧙‍♂️ J'arrive, j'arrive Aventurier !`);
 });
 
-// 1. Sélectionne le bouton `<button id="call_archibald">` avec `querySelector()`
-// 2. Ajoute un écouteur d'événement avec `addEventListener('click', callback)`
-// 3. Dans la fonction callback, utilise `alert()` pour afficher : `🧙‍♂️ J'arrive, j'arrive Aventurier !`
 
 // ============================================
 // EXERCICE 5 : Faisons un peu de magie 🪄
@@ -67,6 +64,36 @@ boutton1.addEventListener("click",callback => {
 // ✍️ TON CODE ICI
 // Récupère toutes les boîtes et les boutons de couleur
 // Ajoute des événements pour changer les couleurs
+
+boites = document.querySelectorAll('.boite')
+bouttonRouge = document.querySelector('#btn_change_red')
+bouttonBleu = document.querySelector(`#btn_change_blue`)
+bouttonVert = document.querySelector(`#btn_change_green`)
+
+bouttonRouge.addEventListener("click",()=>{
+  boites[0].style.background = 'red'
+})
+
+bouttonBleu.addEventListener("click",()=>{
+  boites[0].style.background = 'blue'
+  boites[1].style.background = 'blue'
+})
+
+bouttonVert.addEventListener("click",()=>{
+  boites[0].style.background = 'green'
+  boites[1].style.background = 'green'
+  boites[2].style.background = 'green'
+})
+
+// 1. Utilise `querySelectorAll('.boite')` pour récupérer **toutes** les boîtes (retourne une NodeList)
+// 2. Sélectionne les 3 boutons de couleur :
+//    - `#btn_change_red`
+//    - `#btn_change_blue`
+//    - `#btn_change_green`
+// 3. Pour chaque bouton, ajoute un événement `click` qui :
+//    - **Bouton rouge** : change la couleur de la **1ère boîte** en `'red'`
+//    - **Bouton bleu** : change la couleur des **2 premières boîtes** en `'blue'`
+//    - **Bouton vert** : change la couleur de **toutes les boîtes** en `'green'`
 
 // ============================================
 // EXERCICE 6 : Aventurier, voici ma boutique !
